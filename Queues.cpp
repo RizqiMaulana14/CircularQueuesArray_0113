@@ -54,14 +54,14 @@ class Queues{
             else{
                 //Jika elemen yang dihapus di posisi terakhir array kembali ke awal array
                 if (FRONT == max -1)
-                FRONT = 0;
+                    FRONT = 0;
                 else
-                FRONT = FRONT + 1;
+                    FRONT = FRONT + 1;
             }
         }
 
         void display(){
-            int FRONT_position = FRONT;
+            int FRONT_position = FRONT; //sebetulnya ga perlu, sebagai penanda posisi front atau rear
             int REAR_position = REAR;
 
             //Cek apakah Antrian kosong
@@ -73,6 +73,7 @@ class Queues{
             cout << "\nELement in the queue are...\n";
 
             //Jika Front_position <= REAR_position, iterasi dari FRONT hingga REAR
+            //kondisi belum terjadinya circular. FRONT lebih kecil daripada REAR. Tinggal baca dari front ke rear
             if (FRONT_position <= REAR_position){
                 while (FRONT_position <= REAR_position){
                     cout << queue_array[FRONT_position] << "  ";
@@ -82,6 +83,9 @@ class Queues{
             }
             else{
                 //Jika FRONT_position > REAR_position, iterasi dari FRONT hingga akhir array
+                //sudah terjadi circular queues. JIka Front lebih besar dari REAR
+                //dibaca dulu dari front sampai n-1. lalu si front dijadikan = 0. 
+                //lalu dibiaca sampai rear.
                 while(FRONT_position <= max -1){
                     cout << queue_array[FRONT_position] << "  ";
                     FRONT_position++;
@@ -134,8 +138,12 @@ int main(){
                 }
             }
         }
+        //sebetulnya sama fungsinya di default
+        //ketika ada hal-hal yang tidak diketahui errornya kenapa
         catch(exception &e){
             cout << "Check for the values entered." << endl;
+            //cout << e.what() << endl; //membaca error yang tidak terbaca di default
         }
     }
+    return 0;
 }
