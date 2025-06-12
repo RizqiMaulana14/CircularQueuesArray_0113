@@ -29,6 +29,13 @@ class Queues{
                 REAR = 0;   //2.b
             }
         }
+
+        void remove(){
+            //Cek apakah antrian kosong
+            if (FRONT == -1){
+                cout << "Queues Underflow\n"; 
+            }
+        }
 };
 
 int main(){
