@@ -16,6 +16,12 @@ class Queues{
             cout << "Enter a Number: ";
             cin >> num;
             cout << endl;
+
+            //1. Cek apakah antrian penuh
+            if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)){
+                cout << "\nQueue Overflow\n"; //1.a
+                return;
+            }
         }
 };
 
