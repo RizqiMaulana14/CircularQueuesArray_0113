@@ -47,10 +47,17 @@ class Queues{
             cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << "\n";
 
             //Cek jika antrian hanya memeiliki satu elemen
-            if (FRONT == REAR)
+            if (FRONT == REAR){
+                FRONT = -1;
+                REAR = -1;
+            }
+            else{
+                //Jika elemen yang dihapus di posisi terakhir array kembali ke awal array
+                if (FRONT == max -1)
                 FRONT = 0;
-            else
+                else
                 FRONT = FRONT + 1;
+            }
         }
 
         void display(){
