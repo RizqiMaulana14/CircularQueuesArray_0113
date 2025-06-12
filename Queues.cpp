@@ -3,7 +3,7 @@ using namespace std;
 
 class Queues{
     private:
-        static const int max = 5;
+        static const int max = 5;   //nilai tidak akan pernah berubah//
         int FRONT, REAR;
         int queue_array[5];
     public:
@@ -19,12 +19,12 @@ class Queues{
 
             //1. Cek apakah antrian penuh
             if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)){
-                cout << "\nQueue Overflow\n"; //1.a
+                cout << "\nQueue Overflow\n";   //1.a
                 return;                         //1.b
             }
 
             //2. Cek apakah antrian kosong
-            if (FRONT == 0){
+            if (FRONT == -1){
                 FRONT = 0;  //2.a
                 REAR = 0;   //2.b
             }
