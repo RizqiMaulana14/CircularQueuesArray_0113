@@ -104,6 +104,13 @@ int main(){
             cout << "Enter Your Choice (1 - 4): " << endl;
             cin >> ch;
             cout << endl;
+
+            switch (ch){
+                case '1':{
+                    q.insert();
+                    break;
+                }
+            }
         }
     }
 }
