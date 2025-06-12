@@ -20,7 +20,7 @@ class Queues{
             //1. Cek apakah antrian penuh
             if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)){
                 cout << "\nQueue Overflow\n"; //1.a
-                return;
+                return;                         //1.b
             }
 
             //2. Cek apakah antrian kosong
@@ -28,6 +28,14 @@ class Queues{
                 FRONT = 0;  //2.a
                 REAR = 0;   //2.b
             }
+            else {
+                //Jika REAR berada di posisi terakhir array, kembali ke awal array
+                if (REAR == max - 1)
+                    REAR = 0;
+                else
+                    REAR + 1;
+            }
+            queue_array[REAR] = num;
         }
 
         void remove(){
