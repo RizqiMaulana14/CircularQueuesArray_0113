@@ -42,7 +42,15 @@ class Queues{
             //Cek apakah antrian kosong
             if (FRONT == -1){
                 cout << "Queues Underflow\n"; 
+                return;
             }
+            cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << "\n";
+
+            //Cek jika antrian hanya memeiliki satu elemen
+            if (FRONT == REAR)
+                FRONT = 0;
+            else
+                FRONT = FRONT + 1;
         }
 };
 
